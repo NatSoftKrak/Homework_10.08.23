@@ -1,0 +1,110 @@
+public class Main {
+    public static void main(String[] args) {
+        MathQuiz mathQuiz = new MathQuiz();
+        mathQuiz.start();
+    }
+}
+
+
+class Calculator {
+     public static int add(int number1, int number2) {
+         return number1 + number2;
+     }
+
+     public static int subtract(int number1, int number2) {
+         return number1 - number2;
+     }
+
+     public static int multiply(int number1, int number2) {
+         return number1 * number2;
+     }
+
+     public static int division(int number1, int number2) {
+         return number1 / number2;
+     }
+ }
+
+
+import java.util.Scanner;
+import java.util.Random;
+public class MathQuiz {
+    public void start() {
+        Calculator calculator = new Calculator();
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+        int userAnswer = 10;
+        int correctAnswer = 20;
+        int score = 0;
+
+        int number1 = random.nextInt(10) + 1;
+        int number2 = random.nextInt(10) +1;
+
+        while (userAnswer != correctAnswer) {
+            correctAnswer = Calculator.add(number1, number2);
+            System.out.println("Введите свой ответ:" + number1 + "+" + number2 + ":");
+            userAnswer = scanner.nextInt();
+
+            if (userAnswer != correctAnswer) {
+                System.out.println("Неправильно !");
+                score -= 5;
+            } else {
+                System.out.println("Правильно !");
+                score += 5;
+            }
+            System.out.println("Правильный ответ: " + correctAnswer);
+            System.out.println("Текущий счёт: " + score);
+            System.out.println();
+
+        }
+        while (userAnswer <= 5) {
+            correctAnswer = Calculator.subtract(number1, number2);
+            System.out.println("Введите свой ответ:" + number1 + "-" + number2 + ":");
+            userAnswer = scanner.nextInt();
+
+            if (userAnswer <= 5) {
+                System.out.println("Неправильно !");
+                score -= 5;
+            } else {
+                System.out.println("Правильно !");
+                score += 5;
+            }
+            System.out.println("Правильный ответ: " + correctAnswer);
+            System.out.println("Текущий счёт: " + score);
+            System.out.println();
+
+
+        }
+        while (userAnswer > correctAnswer) {
+            correctAnswer = Calculator.multiply(number1, number2);
+            System.out.println("Введите свой ответ:" + number1 + "*" + number2 + ":");
+            userAnswer = scanner.nextInt();
+
+            if (userAnswer > correctAnswer) {
+                System.out.println("Неправильно !");
+                score -= 5;
+            } else {
+                System.out.println("Правильно !");
+                score += 5;
+            }
+            System.out.println("Правильный ответ: " + correctAnswer);
+            System.out.println("Текущий счёт: " + score);
+            System.out.println();
+        }
+        System.out.println("Прекрасно! Опросник завершён! Вы победили! Ваш финальный счёт:" + score);
+    }
+}
+
+
+Введите свой ответ:9+1:
+10
+Правильно !
+Правильный ответ: 10
+Текущий счёт: 5
+
+Прекрасно! Опросник завершён! Вы победили! Ваш финальный счёт:5
+
+Process finished with exit code 0
+
+
+P.S. Так и не смогла вывести значения (-,*,/), буду пересматривать снова все уроки( . Вы мне подскажите, пожалуйста , я хоть методы нормальные применяю?
+                                                                                     
